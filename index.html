@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <p>Pertenece: Apaza Balboa Juan Jose</p>
+    <p>Programacion III</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia en Programación Orientada a Objetos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>Herencia en Programación Orientada a Objetos</h1>
+    <p>La herencia es uno de los pilares fundamentales de la programación orientada a objetos (POO). Permite que una clase derive de otra clase, heredando sus propiedades y métodos. Esto fomenta la reutilización del código y la creación de estructuras más complejas y manejables.</p>
+    
+    <img src="img1poo.jpg" alt="Descripción de la imagen">
+    
+    <h2>Concepto de Herencia</h2>
+    <p>En POO, una clase puede heredar características (atributos y métodos) de otra clase. La clase que hereda se llama "subclase" o "clase derivada", y la clase de la que se hereda se llama "superclase" o "clase base". La herencia facilita la creación de nuevas clases basadas en clases existentes, lo que permite añadir nuevas características o modificar las existentes sin cambiar el código original.</p>
+    <img src="img2poo.jpg" alt="Descripción de la imagen">
+    <h2>Beneficios de la Herencia</h2>
+    <ul>
+        <li><strong>Reutilización del código:</strong> Permite reutilizar métodos y atributos de una clase base en una clase derivada, reduciendo la redundancia.</li>
+        <li><strong>Facilita el mantenimiento:</strong> Los cambios realizados en la clase base se reflejan automáticamente en las clases derivadas, simplificando el mantenimiento y las actualizaciones del código.</li>
+        <li><strong>Polimorfismo:</strong> Permite que las clases derivadas puedan implementar sus propias versiones de los métodos heredados, lo que facilita la creación de sistemas flexibles y extensibles.</li>
+    </ul>
+    
+    <h2>Ejemplo en JavaScript</h2>
+    <p>En JavaScript, la herencia se puede implementar utilizando las clases y el operador <code>extends</code> para crear una subclase que hereda de una superclase.</p>
+    <pre><code class="language-javascript">
+// Superclase
+class Animal {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+
+    hacerSonido() {
+        console.log(`${this.nombre} hace un sonido.`);
+    }
+}
+
+// Subclase
+class Perro extends Animal {
+    constructor(nombre, raza) {
+        super(nombre); // Llama al constructor de la superclase
+        this.raza = raza;
+    }
+
+    hacerSonido() {
+        console.log(`${this.nombre} ladra.`);
+    }
+
+    mostrarRaza() {
+        console.log(`${this.nombre} es un ${this.raza}.`);
+    }
+}
+
+const miPerro = new Perro('Firulais', 'Labrador');
+miPerro.hacerSonido(); // Firulais ladra.
+miPerro.mostrarRaza(); // Firulais es un Labrador.
+    </code></pre>
+    
+    <h2>Ejemplo en Python</h2>
+    <p>En Python, la herencia se implementa definiendo una subclase que hereda de una superclase y utilizando la función <code>super()</code> para llamar al constructor de la superclase.</p>
+    <pre><code class="language-python">
+# Superclase
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def hacer_sonido(self):
+        print(f'{self.nombre} hace un sonido.')
+
+# Subclase
+class Perro(Animal):
+    def __init__(self, nombre, raza):
+        super().__init__(nombre)  # Llama al constructor de la superclase
+        self.raza = raza
+
+    def hacer_sonido(self):
+        print(f'{self.nombre} ladra.')
+
+    def mostrar_raza(self):
+        print(f'{self.nombre} es un {self.raza}.')
+
+mi_perro = Perro('Firulais', 'Labrador')
+mi_perro.hacer_sonido()  # Firulais ladra.
+mi_perro.mostrar_raza()  # Firulais es un Labrador.
+    </code></pre>
+    
+    <h2>Ejemplo en Java</h2>
+    <p>En Java, la herencia se implementa utilizando la palabra clave <code>extends</code> para crear una subclase que hereda de una superclase. La palabra clave <code>super</code> se utiliza para llamar al constructor de la superclase.</p>
+    <pre><code class="language-java">
+// Superclase
+public class Animal {
+    protected String nombre;
+
+    public Animal(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void hacerSonido() {
+        System.out.println(this.nombre + " hace un sonido.");
+    }
+}
+
+// Subclase
+public class Perro extends Animal {
+    private String raza;
+
+    public Perro(String nombre, String raza) {
+        super(nombre); // Llama al constructor de la superclase
+        this.raza = raza;
+    }
+
+    @Override
+    public void hacerSonido() {
+        System.out.println(this.nombre + " ladra.");
+    }
+
+    public void mostrarRaza() {
+        System.out.println(this.nombre + " es un " + this.raza + ".");
+    }
+
+    public static void main(String[] args) {
+        Perro miPerro = new Perro("Firulais", "Labrador");
+        miPerro.hacerSonido(); // Firulais ladra.
+        miPerro.mostrarRaza(); // Firulais es un Labrador.
+    }
+}
+    </code></pre>
+    
+    <h2>Detalles Adicionales</h2>
+    <p>La herencia también permite el uso de métodos y propiedades protegidas y privadas, dependiendo del lenguaje de programación. Por ejemplo, en Java, los métodos y atributos marcados como <code>protected</code> pueden ser accedidos por las subclases, pero no por otras clases. En Python, no existen modificadores de acceso como en Java, pero se puede usar un guion
